@@ -59,7 +59,7 @@ int main(void) {
 		printf("Item: %s\n", item);
 	}
 	printf("Quantity: %d\n", quantity);
-	printf("Price for each: %.2f$\n", price);
-	printf("Total is %.2f$", total);
+	printf("Price for each: $%.2f\n", price);
+	printf("Total is $%.2f\n", total);
 	return 0;
 }
