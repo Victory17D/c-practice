@@ -33,7 +33,7 @@ int main(void) {
 
 	// Entering data for quantity and price (also input validation check)
 	printf("Enter quantity: ");
-	if (scanf(" %d", &quantity) != 1) {
+	if (scanf(" %d", &quantity) != 1 || quantity < 0) {
 		printf("Invalid input, please try again!\n");
 		return 1;
 	}
@@ -41,7 +41,7 @@ int main(void) {
 	
 
 	printf("Enter price: ");
-	if (scanf(" %f", &price) != 1) {
+	if (scanf(" %f", &price) != 1 || price < 0) {
 		printf("Invalid input, please try again!\n");
 		return 1;
 	}
