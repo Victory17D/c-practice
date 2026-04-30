@@ -1,37 +1,6 @@
-#include <stdio.h> //creating a calculator
-int calculator(void) {
-	float number1 = 0.0f;
-	float number2 = 0;
-	float answer = 0;
-	char operator = '\0';
+#include <stdio.h> 
 
-	printf("Enter your first number: ");
-	scanf(" %f", &number1);
-	if (number1 == 0) {
-		printf("You can't divide by zero.");
-	}
-	printf("Enter your second number: ");
-	scanf(" %f", &number2);
-
-	printf("Enter operator you wanna use: ");
-	scanf(" %c", &operator);
-	if (operator == '+') {
-		answer = number1 + number2;
-		printf("%f", answer);
-	}
-	else if (operator == '-') {
-		answer = number1 - number2;
-		printf("%f", answer);
-	}
-	else if (operator == '*') {
-		answer = number1 * number2;
-		printf("%f", answer);
-	}
-	else if (operator == '/') {
-		answer = number1 / number2;
-		printf("%f", answer);
-	}
-}
+//creating a calculator
 int main(void) {
 	float number1 = 0.0f;
 	float number2 = 0;
@@ -39,14 +8,25 @@ int main(void) {
 	char operator = '\0';
 
 	printf("Enter your first number: ");
-	scanf(" %f", &number1);
+	if (scanf(" %f", &number1) != 1) {
+		printf("Invalid input, please try again.\n");
+		return 1;
+	}
+	char op;
 	printf("Enter operator you wanna use (+ - * /): ");
-	scanf(" %c", &operator);
+	if(scanf(" %c", &op) != 1 || (op != '+' && op != '-' && op != '*' && op != '/')) {
+		printf("Invalid input, please try again.\n");
+		return 1;
+	}
+	operator = op;
 	printf("Enter your second number: ");
-	scanf(" %f", &number2);
+	if (scanf("%f", &number2) != 1) {
+		printf("Invalid input, please try again");
+		return 1;
+	}
 	if (number2 == 0 && operator == '/') {
 		printf("You can't divide by zero.");
-		calculator;
+		return 1;
 	}
 	if (operator == '+') {
 		answer = number1 + number2;
