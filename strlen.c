@@ -19,11 +19,12 @@ int main() {
 		printf("Str2 is longer than Str1!\n");
 	}
 	else if (strlen(str1) > strlen(str2)) {
-		printf("Str1 is longer than str2!\n");
+		printf("Str1 is longer than Str2!\n");
 	}
 	else {
 		printf("Str1 and Str2 are equally long!\n");
 	}
 	printf("First string: %s\n", str1);
 	printf("Second string: %s\n", str2);
+	return 0;
 }
