@@ -9,7 +9,7 @@ int main() {
 	float balance = 1000.0f;
 	int choice;
 	Menu();
-	
+	printf("Welcome to the bank!");
 	// Choice input
 
 	do {
