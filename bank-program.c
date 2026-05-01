@@ -8,8 +8,8 @@ int main() {
 	//Declaring variables
 	float balance = 1000.0f;
 	int choice;
+	printf("*** Welcome to the bank! ***\n");
 	Menu();
-	printf("Welcome to the bank!");
 	// Choice input
 
 	do {
@@ -33,7 +33,7 @@ void mainChoice(int choice, float *balance) {
 		Sleep(1000);
 		Menu();
 	}
-	if (choice == 2) {
+	else if (choice == 2) {
 		printf("Enter amount you want to deposit: ");
 		scanf("%f", &deposit);
 		*balance += deposit;
@@ -42,14 +42,21 @@ void mainChoice(int choice, float *balance) {
 		printf("Your balance: %.2f\n", *balance);
 		Menu();
 	}
-	if (choice == 3) {
+	else if (choice == 3) {
 		printf("Enter amount to withdraw: ");
 		scanf("%f", &withdraw);
-		*balance -= withdraw;
-		Sleep(1000);
-		printf("Successfully withdrew %.2f\n", withdraw);
-		printf("Your balance: %.2f\n", *balance);
-		Menu();
+		if (withdraw > *balance) {
+			printf("Not sufficient balance, please try again");
+			Sleep(1000);
+			Menu();
+		}
+		else {
+			Sleep(1000);
+			printf("Successfully withdrew %.2f\n", withdraw);
+			*balance -= withdraw;
+			printf("Your balance: %.2f\n", *balance);
+			Menu();
+		}
 	}
 }
 void Menu(void) {
