@@ -19,7 +19,6 @@ int main(void) {
 	while (getchar() != '\n');
 	userChoice -= 1;
 	randomChoice = rand() % 3;
-	printf("Userchoice = %d\nComputerChoice = %d\n", userChoice, randomChoice);
 	switch (userChoice) {
 		case 0:
 			printf("You chose Rock!\n");
